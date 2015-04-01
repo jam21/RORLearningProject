@@ -1,8 +1,8 @@
 Blog::Application.routes.draw do
-  get "static_pages/home"
-
-  get "static_pages/help"
-  get 'static_pages/about'
+  root             'static_pages#home'
+  get 'help'    => 'static_pages#help'
+  get 'about'   => 'static_pages#about'
+  get 'contact' => 'static_pages#contact'
   resources :microposts
 
 
@@ -60,7 +60,7 @@ Blog::Application.routes.draw do
 resources :articles
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'static_pages#home'
+  # root :to => 'static_pages#home'
 
   # See how all your routes lay out with "rake routes"
 
