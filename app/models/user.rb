@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
-  has_many :microposts
   attr_accessible :email, :name
+  has_secure_password
+  validates :name,presence: true,length: {maximum:55}
+  validates :email,presence: true,length: {maximum:255}
+  validates :password,length: {minimum: 6}
 end
