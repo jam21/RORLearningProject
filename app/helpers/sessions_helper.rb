@@ -7,6 +7,13 @@ module SessionsHelper
     @current_user ||=User.where(id: session[:user_id]).first
   end
   def logged_in?
-    !User.where(id: session[:user_id]).first.nil?
+    if(session[:user_id])
+      !User.where(id: session[:user_id]).first.nil?
+    else
+      false
+    end
+  end
+  def log_out
+    session.delete(:user_id)
   end
 end

@@ -11,6 +11,8 @@ Blog::Application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  get 'player/all' => 'android_sample_app_user#index'
+  post 'player' => 'android_sample_app_user#new'
   resources :microposts
 
 

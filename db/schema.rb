@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150406073904) do
+ActiveRecord::Schema.define(:version => 20150622090453) do
+
+  create_table "android_sample_app_users", :force => true do |t|
+    t.string   "user_name"
+    t.integer  "scores"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "articles", :force => true do |t|
     t.string   "title"
