@@ -3,7 +3,6 @@ class AndroidSampleAppUserController < ApplicationController
     @androidSampleAppUser = AndroidSampleAppUser.all
 
     respond_to do |format|
-
       format.json { render json: @androidSampleAppUser }
     end
   end
